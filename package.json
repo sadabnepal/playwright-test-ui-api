@@ -1,0 +1,25 @@
+{
+  "name": "playwright-test-ui-api",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --ui",
+    "test:ci": "npx playwright test --headed",
+    "test:chromium": "npx playwright test --project=chromium"
+  },
+  "keywords": [
+    "playwright",
+    "mocha",
+    "typescript"
+  ],
+  "author": "MD SADAB SAQIB",
+  "license": "ISC",
+  "description": "demo playwright project",
+  "devDependencies": {
+    "@faker-js/faker": "^9.6.0",
+    "@playwright/test": "^1.51.0",
+    "@types/node": "^22.13.10",
+    "dotenv": "^16.4.7",
+    "npm-check-updates": "^17.1.15",
+    "ortoni-report": "^2.0.9"
+  }
+}
