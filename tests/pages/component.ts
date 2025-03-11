@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test";
+import { Page } from '@playwright/test';
 
 const getDropdownByLabel = (label: string) => `//label[text()='${label}']/parent::div/following-sibling::*//div[contains(@class, 'select-text--after')]`;
 const getInputByLabel = (label: string) => `//label[text()='${label}']/parent::*/following-sibling::*//input`;

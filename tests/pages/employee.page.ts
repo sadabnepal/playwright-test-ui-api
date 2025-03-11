@@ -1,6 +1,6 @@
-import { expect, Page } from "@playwright/test";
-import { getInputLocator } from "./component";
-import { ICreateEmployee } from "../interfaces/employee";
+import { expect, Page } from '@playwright/test';
+import { getInputLocator } from './component';
+import { ICreateEmployee } from '../interfaces/employee';
 
 class EmployeePage {
 

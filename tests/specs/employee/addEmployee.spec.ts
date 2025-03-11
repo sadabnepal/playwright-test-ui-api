@@ -1,8 +1,6 @@
-import { test, expect } from 'playwright/test'
+import { test, expect } from 'playwright/test';
 import LandingPage from '../../pages/landing.page';
-import AdminPage from '../../pages/admin.page';
 import LoginPage from '../../pages/login.page';
-import { fa, faker } from '@faker-js/faker';
 
 import { config } from 'dotenv';
 import { toastMessage } from '../../pages/component';

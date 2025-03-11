@@ -1,22 +1,22 @@
-import { expect, test } from "@playwright/test";
-import mockedData from "../../data/mock.json";
+import { expect, test } from '@playwright/test';
+import mockedData from '../../data/mock.json';
 
-test("should display mocked response", async ({ page }) => {
+test('should display mocked response', async ({ page }) => {
 
-    await page.route("**/api/books", (route) => {
-        route.fulfill({ contentType: "application/json", body: JSON.stringify(mockedData) })
+    await page.route('**/api/books', async (route) => {
+        await route.fulfill({ contentType: 'application/json', body: JSON.stringify(mockedData) });
     });
 
-    let data: any;
+    let data: unknown;
 
     page.on('request', async (request) => {
-        if (request.url().includes("/api/books")) {
+        if (request.url().includes('/api/books')) {
             const response = await request.response();
             data = await response?.json();
         }
-    })
+    });
 
-    await page.goto("https://danube-web.shop/");
-    expect(await page.locator('.preview').all()).toHaveLength(1)
-    expect(data).toEqual(mockedData);
-})
+    await page.goto('https://danube-web.shop/');
+    expect(await page.locator('.preview').all()).toHaveLength(1);
+    expect(data).toEqual(mockedData)
+});

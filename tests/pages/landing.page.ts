@@ -1,5 +1,5 @@
-import { Page } from "@playwright/test";
-import NavigatePage from "./navigate.page";
+import { Page } from '@playwright/test';
+import NavigatePage from './navigate.page';
 
 class LandingPage {
 

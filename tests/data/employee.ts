@@ -1,5 +1,5 @@
-import { faker } from "@faker-js/faker";
-import { ICreateEmployee } from "../interfaces/employee";
+import { faker } from '@faker-js/faker';
+import { ICreateEmployee } from '../interfaces/employee';
 
 export const createEmployeeData = (status: 'Enabled' | 'Disabled'): ICreateEmployee => {
     return {
@@ -14,5 +14,5 @@ export const createEmployeeData = (status: 'Enabled' | 'Disabled'): ICreateEmplo
             password: faker.internet.password(),
             status: status
         }
-    }
-}
+    };
+};
