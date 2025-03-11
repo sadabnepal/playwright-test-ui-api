@@ -1,10 +1,11 @@
 import { expect, Page } from "@playwright/test";
+import { OrangeHrmAppMenu } from "../interfaces/menu";
 
 class NavigatePage {
 
     constructor(private readonly page: Page) { };
 
-    async goto(menuItem: 'Admin' | 'PIM' | 'Leave' | 'Time' | 'Recruitment' | 'Performance' | 'Dashboard' | 'Directory' | 'Maintenance' | 'Claim' | 'Buzz') {
+    async goto(menuItem: OrangeHrmAppMenu) {
         await this.page.getByRole('link', { name: menuItem }).click();
         await expect(this.page.getByRole('heading', { name: menuItem })).toBeVisible();
     }
