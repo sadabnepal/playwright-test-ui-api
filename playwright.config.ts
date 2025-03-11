@@ -9,7 +9,7 @@ const reportConfig: OrtoniReportConfig = {
   title: "Playwright Test Result",
   base64Image: true,
   showProject: !true,
-  open: 'on-failure',
+  open: process.env.CI ? 'never' : 'on-failure',
   stdIO: true
 }
 
