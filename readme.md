@@ -17,6 +17,7 @@ cd playwright-test-ui
 Install Packages
 ```bash
 npm install
+npm run prepare
 ```
 
 Install Browsers
@@ -29,14 +30,17 @@ Run tests and Generate Report
 ```bash
 npm test  [run all tests]
 ```
+
+Code Analyze and Fix
+```bash
+npm run lint
+npm run lint:fix
+```
+
 check script section of package.json for more test commands
 
 
 TODO:
-- add eslint flat config
-- add husky for commit check
-- add github action workflow
-- add custom vscode settings
 - optimize reading env variables
 - add fixtures to optimize page imports
 - update readme file

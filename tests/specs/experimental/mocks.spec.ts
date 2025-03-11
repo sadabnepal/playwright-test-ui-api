@@ -18,5 +18,5 @@ test('should display mocked response', async ({ page }) => {
 
     await page.goto('https://danube-web.shop/');
     expect(await page.locator('.preview').all()).toHaveLength(1);
-    expect(data).toEqual(mockedData)
+    expect(data).toEqual(mockedData);
 });
