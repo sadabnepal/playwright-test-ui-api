@@ -41,9 +41,9 @@ check script section of package.json for more test commands
 
 
 TODO:
-- optimize reading env variables
 - add fixtures to optimize page imports
 - update readme file
+- optimize import path
 
 ## Sample Report:
 ![Ortoni-Report](./samples/ortoni-report.png)

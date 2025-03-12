@@ -1,17 +1,15 @@
-import { test, expect } from 'playwright/test';
-import LandingPage from '../../pages/landing.page';
-import AdminPage from '../../pages/admin.page';
-import LoginPage from '../../pages/login.page';
-import { toastMessage } from '../../pages/component';
+import { expect, test } from 'playwright/test';
 import { userData } from '../../data/user';
-
-import { config } from 'dotenv';
-config({ path: '.env' });
+import ENV from '../../helper/env';
+import AdminPage from '../../pages/admin.page';
+import { toastMessage } from '../../pages/component';
+import LandingPage from '../../pages/landing.page';
+import LoginPage from '../../pages/login.page';
 
 test('validate admin page', async ({ page }) => {
     const loginPage = new LoginPage(page);
     await loginPage.open();
-    await loginPage.login(process.env.USERNAME as string, process.env.PASSWORD as string);
+    await loginPage.login(ENV.USERNAME, ENV.PASSWORD);
 
     const landingPage = new LandingPage(page);
     await expect(landingPage.pageHeader).toBeVisible();
