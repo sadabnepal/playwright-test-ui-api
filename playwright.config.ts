@@ -29,14 +29,16 @@ export default defineConfig({
         {
             name: 'chromium',
             use: { ...devices['Desktop Chrome'] },
+            testDir: './tests/ui'
         },
-        // {
-        //   name: 'firefox',
-        //   use: { ...devices['Desktop Firefox'] },
-        // },
-        // {
-        //   name: 'webkit',
-        //   use: { ...devices['Desktop Safari'] },
-        // },
+        {
+            name: 'webkit',
+            use: { ...devices['Desktop Safari'] },
+            testDir: './tests/ui'
+        },
+        {
+            name: 'api',
+            testDir: './tests/api'
+        }
     ]
 });

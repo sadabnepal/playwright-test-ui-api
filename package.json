@@ -3,8 +3,13 @@
   "scripts": {
     "test": "npx playwright test",
     "test:ui": "npx playwright test --ui",
-    "test:ci": "npx playwright test --headed",
+    "test:headed": "npx playwright test --headed",
     "test:chromium": "npx playwright test --project=chromium",
+    "test:safari": "npx playwright test --project=webkit",
+    "test:ci:chrome": "npx playwright test --project=chromium",
+    "test:ci:safari": "npx playwright test --project=webkit",
+    "test:ci": "npx playwright test",
+    "test:api": "npx playwright test --project=api",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky"
