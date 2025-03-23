@@ -4,6 +4,7 @@ on:
   pull_request:
     branches: [ main ]
 jobs:
+
   ui-test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
@@ -16,11 +17,30 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps chromium
-    - name: Run Playwright tests
+    - name: Run Playwright UI tests
       run: npm run test:chromium
     - uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: ortoni-report
+        name: ortoni-report-ui
+        path: ortoni-report/
+        retention-days: 30
+
+  api-test:
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+    - name: Install dependencies
+      run: npm ci
+    - name: Run Playwright api tests
+      run: npm run test:api
+    - uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: ortoni-report-api
         path: ortoni-report/
         retention-days: 30
