@@ -11,3 +11,7 @@ export function getInputLocator(page: Page, label: string) {
 export function getDropdownLocator(page: Page, label: string) {
     return page.locator(getDropdownByLabel(label));
 };
+
+export function getTableRows(page: Page) {
+    return page.getByRole('table').getByRole('rowgroup').nth(1);
+}

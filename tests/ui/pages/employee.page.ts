@@ -1,10 +1,17 @@
 import { expect, Page } from '@playwright/test';
 import { ICreateEmployee } from '@ui/interface/employee';
-import { getInputLocator } from './component';
+import { getInputLocator, getTableRows } from './component';
 
 class EmployeePage {
 
     constructor(private readonly page: Page) { }
+
+    async getExistingUserName() {
+        const firstRowCells = getTableRows(this.page).first().getByRole('cell');
+        const firstName = await firstRowCells.nth(2).innerText();
+        const lastName = await firstRowCells.nth(3).innerText();
+        return firstName.concat(' ').concat(lastName);
+    }
 
     async addEmployee(options: ICreateEmployee) {
         await this.page.getByRole('link', { name: 'Add Employee' }).click();
