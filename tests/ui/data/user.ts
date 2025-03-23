@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { ICreateUser } from '../interfaces/user';
+import { ICreateUser } from '@ui/interface/user';
 
 export const userData: ICreateUser = {
     role: 'ESS',

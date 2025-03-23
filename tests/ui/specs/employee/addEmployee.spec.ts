@@ -1,16 +1,16 @@
-import { createEmployeeData } from '../../data/employee';
-import { expect, test } from '../../fixtures/base';
-import ENV from '../../helper/env';
+import { expect, test } from '@fixtures/base';
+import { createEmployeeData } from '@ui/data/employee';
+import ENV from '@ui/helper/env';
 import { toastMessage } from '../../pages/component';
 
-test('validate add employee', async ({ page, loginPage, landingPage, employeePage }) => {
+test('validate add employee', async ({ page, loginPage, landingPage, navigatePage, employeePage }) => {
 
     await loginPage.open();
     await loginPage.login(ENV.USERNAME, ENV.PASSWORD);
 
     await expect(landingPage.pageHeader).toBeVisible();
 
-    await landingPage.navigate().goto('PIM');
+    await navigatePage.goto('PIM');
 
     await employeePage.addEmployee(createEmployeeData('Enabled'));
     await expect(toastMessage(page)).toHaveText('Successfully Saved');

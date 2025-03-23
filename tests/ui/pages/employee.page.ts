@@ -1,6 +1,6 @@
 import { expect, Page } from '@playwright/test';
+import { ICreateEmployee } from '@ui/interface/employee';
 import { getInputLocator } from './component';
-import { ICreateEmployee } from '../interfaces/employee';
 
 class EmployeePage {
 

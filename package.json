@@ -10,7 +10,7 @@
     "test:ci:safari": "npx playwright test --project=webkit",
     "test:ci": "npx playwright test",
     "test:api": "npx playwright test --project=api",
-    "lint": "eslint .",
+    "lint": "tsc --noEmit && eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky"
   },

@@ -1,4 +1,4 @@
-# Playwright web testing with typescript
+# Playwright TypeScript Test Automation Framework
 
 ## Requirements:
 
@@ -22,13 +22,17 @@ npm run prepare
 
 Install Browsers
 ```bash
-npx playwright install chromium
+npx playwright install --with-deps --chromium
+npx playwright install --with-deps --webkit
 ```
 
 Run tests and Generate Report
 
 ```bash
-npm test  [run all tests]
+npm test            [ run all tests ]
+npm run test:chrome [ Run UI tests in Chromium ]
+npm run test:webkit [ Run UI tests in Webkit ]
+npm run test:api    [ Run API tests ]
 ```
 
 Code Analyze and Fix
@@ -41,9 +45,7 @@ check script section of package.json for more test commands
 
 
 TODO:
-- add fixtures to optimize page imports
 - update readme file
-- optimize import path
 
 ## Sample Report:
 ![Ortoni-Report](./samples/ortoni-report.png)

@@ -1,5 +1,5 @@
 import { expect, Page } from '@playwright/test';
-import { OrangeHrmAppMenu } from '../interfaces/menu';
+import { OrangeHrmAppMenu } from '@ui/interface/menu';
 
 class NavigatePage {
 

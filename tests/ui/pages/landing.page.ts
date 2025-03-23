@@ -1,5 +1,4 @@
 import { Page } from '@playwright/test';
-import NavigatePage from './navigate.page';
 
 class LandingPage {
 
@@ -7,8 +6,5 @@ class LandingPage {
 
     get pageHeader() { return this.page.getByRole('heading', { name: 'Dashboard' }) };
 
-    navigate() {
-        return new NavigatePage(this.page);
-    }
 }
 export default LandingPage;

@@ -1,5 +1,5 @@
 import { expect, Page } from '@playwright/test';
-import { ICreateUser } from '../interfaces/user';
+import { ICreateUser } from '@ui/interface/user';
 import { getDropdownLocator, getInputLocator } from './component';
 
 class AdminPage {

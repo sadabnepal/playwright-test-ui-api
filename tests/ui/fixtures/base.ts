@@ -1,12 +1,14 @@
+import AdminPage from '@pages/admin.page';
+import EmployeePage from '@pages/employee.page';
+import LandingPage from '@pages/landing.page';
+import LoginPage from '@pages/login.page';
+import NavigatePage from '@pages/navigate.page';
 import { test as base } from '@playwright/test';
-import AdminPage from '../pages/admin.page';
-import EmployeePage from '../pages/employee.page';
-import LandingPage from '../pages/landing.page';
-import LoginPage from '../pages/login.page';
 
 type PageOption = {
     landingPage: LandingPage;
     loginPage: LoginPage;
+    navigatePage: NavigatePage;
     employeePage: EmployeePage;
     adminPage: AdminPage;
 }
@@ -23,6 +25,9 @@ export const test = base.extend<PageOption>({
     },
     adminPage: async ({ page }, use) => {
         await use(new AdminPage(page));
+    },
+    navigatePage: async ({ page }, use) => {
+        await use(new NavigatePage(page));
     }
 });
 export { expect } from '@playwright/test';

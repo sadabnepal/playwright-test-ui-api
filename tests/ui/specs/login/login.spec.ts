@@ -1,5 +1,6 @@
-import { expect, test } from '../../fixtures/base';
-import ENV from '../../helper/env';
+
+import { expect, test } from '@fixtures/base';
+import ENV from '@ui/helper/env';
 
 test.beforeEach('open app', async ({ loginPage }) => {
     await loginPage.open();

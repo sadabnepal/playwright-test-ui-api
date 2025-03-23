@@ -1,5 +1,5 @@
-import { expect, test } from '@playwright/test';
-import mockedData from '../../data/mock.json';
+import { expect, test } from '@fixtures/base';
+import mockedData from '@ui/data/mock.json';
 
 test('should display mocked response', async ({ page }) => {
 

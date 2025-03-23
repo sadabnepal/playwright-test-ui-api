@@ -4,7 +4,7 @@ import { OrtoniReportConfig } from 'ortoni-report';
 const reportConfig: OrtoniReportConfig = {
     preferredTheme: 'light',
     authorName: 'Mohammad Sadab Saqib',
-    projectName: 'Heroku Playwright Test',
+    projectName: 'Playwright Test',
     testType: 'E2E',
     title: 'Playwright Test Result',
     base64Image: true,

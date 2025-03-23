@@ -6,6 +6,24 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": "./tests",
+    "paths": {
+      "@ui/data/*": [
+        "./ui/data/*"
+      ],
+      "@fixtures/*": [
+        "./ui/fixtures/*"
+      ],
+      "@ui/helper/*": [
+        "./ui/helper/*"
+      ],
+      "@ui/interface/*": [
+        "./ui/interfaces/*"
+      ],
+      "@pages/*": [
+        "./ui/pages/*"
+      ]
+    }
   }
 }
