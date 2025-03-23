@@ -48,4 +48,4 @@ TODO:
 - update readme file
 
 ## Sample Report:
-![Ortoni-Report](./samples/ortoni-report.png)
+![Report](./samples/report.png)
