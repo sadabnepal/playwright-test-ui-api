@@ -8,7 +8,7 @@ const reportConfig: OrtoniReportConfig = {
     testType: 'E2E',
     title: 'Playwright Test Result',
     base64Image: true,
-    showProject: true,
+    showProject: !true,
     open: process.env.CI ? 'never' : 'on-failure',
     stdIO: true
 };
@@ -19,7 +19,10 @@ export default defineConfig({
     forbidOnly: !!process.env.CI,
     retries: process.env.CI ? 2 : 0,
     workers: process.env.CI ? 1 : undefined,
-    reporter: [['ortoni-report', reportConfig]],
+    reporter: [
+        ['ortoni-report', reportConfig],
+        ['html']
+    ],
     use: {
         trace: 'on-first-retry',
         screenshot: 'only-on-failure'

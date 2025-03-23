@@ -23,6 +23,12 @@
       ],
       "@pages/*": [
         "./ui/pages/*"
+      ],
+      "@api/data/*": [
+        "./api/data/*"
+      ],
+      "@api/helper/*": [
+        "./api/helper/*"
       ]
     }
   }
