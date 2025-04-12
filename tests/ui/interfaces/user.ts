@@ -7,4 +7,4 @@ export interface ICreateUser {
 }
 
 type UserRoles = 'Admin' | 'ESS';
-type UserStatus = 'Enabled' | 'Disabled';
+export type UserStatus = 'Enabled' | 'Disabled';

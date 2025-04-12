@@ -4,13 +4,19 @@ import { OrtoniReportConfig } from 'ortoni-report';
 const reportConfig: OrtoniReportConfig = {
     preferredTheme: 'light',
     authorName: 'Mohammad Sadab Saqib',
-    projectName: 'Playwright Test',
+    projectName: 'OrangeHrm Test',
     testType: 'E2E',
     title: 'Playwright Test Result',
     base64Image: true,
     showProject: !true,
     open: process.env.CI ? 'never' : 'on-failure',
-    stdIO: true
+    stdIO: true,
+    meta: {
+        appVersion: '3.0.0',
+        description: 'Playwright test report',
+        release: 'Release.2025',
+        platform: process.platform,
+    }
 };
 
 export default defineConfig({

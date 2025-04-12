@@ -1,7 +1,8 @@
 import { faker } from '@faker-js/faker';
 import { ICreateEmployee } from '@ui/interface/employee';
+import { UserStatus } from '@ui/interface/user';
 
-export const createEmployeeData = (status: 'Enabled' | 'Disabled'): ICreateEmployee => {
+export const createEmployeeData = (status: UserStatus): ICreateEmployee => {
     return {
         employeeDetails: {
             firstName: faker.person.firstName(),

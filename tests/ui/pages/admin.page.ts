@@ -1,6 +1,6 @@
 import { expect, Page } from '@playwright/test';
 import { ICreateUser } from '@ui/interface/user';
-import { getDropdownLocator, getInputLocator } from './component';
+import { getDropdownLocatorByLabel, getInputLocatorByLabel } from './component';
 
 class AdminPage {
 
@@ -15,18 +15,18 @@ class AdminPage {
         await this.page.getByRole('button', { name: 'Add' }).click();
         await expect(this.page.getByRole('heading', { name: 'Add User' })).toBeVisible();
 
-        await getDropdownLocator(this.page, 'User Role').click();
+        await this.page.locator(getDropdownLocatorByLabel('User Role')).click();
         await this.page.getByRole('option', { name: options.role }).click();
 
-        await getInputLocator(this.page, 'Employee Name').fill(options.name);
+        await this.page.locator(getInputLocatorByLabel('Employee Name')).fill(options.name);
         await this.page.getByText(options.name).click();
 
-        await getDropdownLocator(this.page, 'Status').click();
+        await this.page.locator(getDropdownLocatorByLabel('Status')).click();
         await this.page.getByRole('option', { name: options.status }).click();
 
-        await getInputLocator(this.page, 'Username').fill(options.username);
-        await getInputLocator(this.page, 'Password').fill(options.password);
-        await getInputLocator(this.page, 'Confirm Password').fill(options.password);
+        await this.page.locator(getInputLocatorByLabel('Username')).fill(options.username);
+        await this.page.locator(getInputLocatorByLabel('Password')).fill(options.password);
+        await this.page.locator(getInputLocatorByLabel('Confirm Password')).fill(options.password);
         await this.page.getByRole('button', { name: 'Save' }).click();
     }
 

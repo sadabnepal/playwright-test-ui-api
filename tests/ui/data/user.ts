@@ -3,7 +3,7 @@ import { ICreateUser } from '@ui/interface/user';
 
 export const adminUserData = (existingUser: string): ICreateUser => {
     return {
-        role: 'ESS',
+        role: 'Admin',
         name: existingUser,
         status: 'Enabled',
         username: faker.internet.username(),

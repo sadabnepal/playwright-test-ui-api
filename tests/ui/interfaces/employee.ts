@@ -1,3 +1,5 @@
+import { UserStatus } from './user';
+
 export interface ICreateEmployee {
     employeeDetails: {
         firstName: string;
@@ -8,6 +10,6 @@ export interface ICreateEmployee {
     loginDetails?: {
         username: string;
         password: string;
-        status: 'Enabled' | 'Disabled';
+        status: UserStatus;
     };
 }
