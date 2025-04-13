@@ -1,12 +1,13 @@
 import { request } from '@playwright/test';
+import { GetEndpoints, PostEndpoints, RestBaseUrl } from './types';
 
-export async function getRestApiRequest(baseUrl: string, endpoint: string) {
+export async function getRestApiRequest(baseUrl: RestBaseUrl, endpoint: GetEndpoints) {
     const apiContext = await request.newContext({ timeout: 30000 });
     const response = apiContext.get(baseUrl.concat(endpoint));
     return response;
 }
 
-export async function postRestApiRequest(baseUrl: string, endpoint: string, payload: Record<string, string>) {
+export async function postRestApiRequest(baseUrl: RestBaseUrl, endpoint: PostEndpoints, payload: Record<string, string>) {
     const apiContext = await request.newContext({ timeout: 30000 });
     const response = apiContext.post(baseUrl.concat(endpoint), { data: payload });
     return response;

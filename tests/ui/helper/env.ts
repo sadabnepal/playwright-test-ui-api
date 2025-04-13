@@ -1,7 +1,7 @@
 import { config } from 'dotenv';
-import { resolve } from 'path';
+import { join } from 'path';
 
-config({ path: resolve(process.cwd(), '.env') });
+config({ path: join(process.cwd(), '.env') });
 
 export default class ENV {
     public static readonly USERNAME = process.env.USERNAME as string;

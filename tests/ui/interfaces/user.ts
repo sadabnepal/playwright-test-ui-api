@@ -1,3 +1,6 @@
+type UserRoles = 'Admin' | 'ESS';
+export type UserStatus = 'Enabled' | 'Disabled';
+
 export interface ICreateUser {
     role: UserRoles;
     name: string;
@@ -5,6 +8,3 @@ export interface ICreateUser {
     username: string;
     password: string;
 }
-
-type UserRoles = 'Admin' | 'ESS';
-export type UserStatus = 'Enabled' | 'Disabled';
