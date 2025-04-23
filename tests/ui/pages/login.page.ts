@@ -1,3 +1,4 @@
+import { env } from '@env/manager';
 import { Page } from '@playwright/test';
 
 class LoginPage {
@@ -8,7 +9,7 @@ class LoginPage {
     get companyLinkFooter() { return this.page.getByRole('link', { name: 'OrangeHRM, Inc' }) };
 
     async open() {
-        await this.page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+        await this.page.goto(env.APP_URL);
     }
 
     async login(username: string, password: string) {

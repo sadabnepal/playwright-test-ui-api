@@ -1,11 +1,10 @@
 import { createRandomUserData } from '@api/data/restApi';
 import { getRestApiRequest, postRestApiRequest } from '@api/helper/httpCalls';
+import { env } from '@env/manager';
 import { expect, test } from '@playwright/test';
 
-const baseUrl = 'https://reqres.in/api';
-
 test('rest api: get user', async () => {
-    const response = await getRestApiRequest(baseUrl, '/users/1');
+    const response = await getRestApiRequest(env.REST_URL, '/users/1');
 
     expect(response.status()).toEqual(200);
 
@@ -20,7 +19,7 @@ test('rest api: get user', async () => {
 test('rest api: create user', async () => {
     const payload = createRandomUserData;
 
-    const response = await postRestApiRequest(baseUrl, '/users', payload);
+    const response = await postRestApiRequest(env.REST_URL, '/users', payload);
     expect(response.status()).toEqual(201);
 
     const body = await response.json();

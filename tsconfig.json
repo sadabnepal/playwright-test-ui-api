@@ -29,6 +29,9 @@
       ],
       "@api/helper/*": [
         "./api/helper/*"
+      ],
+      "@env/*": [
+        "./env/*"
       ]
     }
   }
