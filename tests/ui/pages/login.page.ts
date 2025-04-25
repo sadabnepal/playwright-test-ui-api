@@ -18,5 +18,10 @@ class LoginPage {
         await this.page.getByRole('button', { name: 'Login' }).click();
     }
 
+    async getRequiredErrorMessage(field: 'Username' | 'Password') {
+        const locator = this.page.locator(`//*[@placeholder='${field}']/../following-sibling::*[contains(@class, 'input-field-error-message')]`);
+        return locator;
+    }
+
 }
 export default LoginPage;

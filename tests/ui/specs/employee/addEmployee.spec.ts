@@ -1,7 +1,7 @@
 import { expect, test } from '@fixtures/base';
 import { toastMessage } from '@pages/component';
 import { createEmployeeData } from '@ui/data/employee';
-import ENV from '@ui/helper/env';
+import { ENV } from '@ui/helper/env';
 
 test('validate add employee', async ({ page, loginPage, landingPage, navigatePage, employeePage }) => {
 

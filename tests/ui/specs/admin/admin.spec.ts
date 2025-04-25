@@ -1,7 +1,7 @@
 import { expect, test } from '@fixtures/base';
 import { toastMessage } from '@pages/component';
 import { adminUserData } from '@ui/data/user';
-import ENV from '@ui/helper/env';
+import { ENV } from '@ui/helper/env';
 
 test('validate admin page', async ({ page, loginPage, landingPage, navigatePage, employeePage, adminPage }) => {
 
