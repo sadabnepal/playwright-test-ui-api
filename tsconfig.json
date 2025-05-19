@@ -15,9 +15,6 @@
       "@fixtures/*": [
         "./ui/fixtures/*"
       ],
-      "@ui/helper/*": [
-        "./ui/helper/*"
-      ],
       "@ui/interface/*": [
         "./ui/interfaces/*"
       ],
@@ -29,6 +26,9 @@
       ],
       "@api/helper/*": [
         "./api/helper/*"
+      ],
+      "@api/schema/*": [
+        "./api/schema/*"
       ],
       "@env/*": [
         "./env/*"

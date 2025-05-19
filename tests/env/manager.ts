@@ -3,9 +3,15 @@ import { RestBaseUrl } from '@api/helper/types';
 import { config } from 'dotenv';
 import { join } from 'path';
 
-const ENV = process.env.ENV || 'dev';
+config({ path: join(process.cwd(), '.env') });
 
-config({ path: join(process.cwd(), 'tests', 'env', `${ENV}.env`) });
+export const localEnv = {
+    USERNAME: process.env.USERNAME as string,
+    PASSWORD: process.env.PASSWORD as string
+};
+
+
+config({ path: join(process.cwd(), 'tests', 'env', `${process.env.ENV || 'dev'}.env`) });
 
 export const env = {
     APP_URL: process.env.APP_URL as string,

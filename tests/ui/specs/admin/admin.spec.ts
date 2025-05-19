@@ -1,12 +1,12 @@
+import { localEnv } from '@env/manager';
 import { expect, test } from '@fixtures/base';
 import { toastMessage } from '@pages/component';
 import { adminUserData } from '@ui/data/user';
-import { ENV } from '@ui/helper/env';
 
 test('validate admin page', async ({ page, loginPage, landingPage, navigatePage, employeePage, adminPage }) => {
 
     await loginPage.open();
-    await loginPage.login(ENV.USERNAME, ENV.PASSWORD);
+    await loginPage.login(localEnv.USERNAME, localEnv.PASSWORD);
 
     await expect(landingPage.pageHeader).toBeVisible();
 

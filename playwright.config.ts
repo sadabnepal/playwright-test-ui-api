@@ -2,18 +2,22 @@ import { defineConfig, devices } from '@playwright/test';
 import { OrtoniReportConfig } from 'ortoni-report';
 
 const reportConfig: OrtoniReportConfig = {
-    preferredTheme: 'light',
-    authorName: 'Mohammad Sadab Saqib',
+    open: process.env.CI ? 'never' : 'on-failure',
+    folderPath: 'ortoni-report',
+    filename: 'index.html',
+    title: 'Playwright Test Result',
     projectName: 'OrangeHrm Test',
     testType: 'E2E',
-    title: 'Playwright Test Result',
+    authorName: 'Mohammad Sadab Saqib',
     base64Image: true,
+    preferredTheme: 'light',
     showProject: !true,
-    open: process.env.CI ? 'never' : 'on-failure',
     stdIO: true,
     meta: {
-        appVersion: '3.0.0',
+        project: 'OrangeHRM',
+        version: '3.0.0',
         description: 'Playwright test report',
+        testCycle: '1',
         release: 'Release.2025',
         platform: process.platform,
     }
@@ -37,18 +41,22 @@ export default defineConfig({
     /* Configure projects for major browsers */
     projects: [
         {
-            name: 'chromium',
+            name: 'UI chromium',
             use: { ...devices['Desktop Chrome'] },
             testDir: './tests/ui'
         },
         {
-            name: 'webkit',
+            name: 'UI webkit',
             use: { ...devices['Desktop Safari'] },
             testDir: './tests/ui'
         },
         {
-            name: 'api',
-            testDir: './tests/api'
+            name: 'Rest API',
+            testDir: './tests/api/specs/rest'
+        },
+        {
+            name: 'GraphQL API',
+            testDir: './tests/api/specs/graphql'
         }
     ]
 });
