@@ -4,7 +4,7 @@ import { createUserSchemaResponse, getUserByIdSchema } from '@api/schema/reqRes'
 import { env } from '@env/manager';
 import { expect, test } from '@playwright/test';
 
-test('rest api: get user', async () => {
+test('rest api: get user', { tag: '@api' }, async () => {
     const response = await getRestApiRequest(env.REST_URL, '/users/1');
 
     expect(response.status()).toEqual(200);
@@ -17,7 +17,7 @@ test('rest api: get user', async () => {
     expect(body.data.last_name).toEqual('Bluth');
 });
 
-test('rest api: create user', async () => {
+test('rest api: create user', { tag: '@api' }, async () => {
     const payload = createRandomUserData;
 
     const response = await postRestApiRequest(env.REST_URL, '/users', payload);
@@ -33,14 +33,14 @@ test('rest api: create user', async () => {
     expect(body.createdAt).toBeDefined();
 });
 
-test('rest api: get user schema validation', async () => {
+test('rest api: get user schema validation', { tag: '@api' }, async () => {
     const response = await getRestApiRequest(env.REST_URL, '/users/1');
     expect(response.status()).toEqual(200);
 
     getUserByIdSchema.parse(await response.json());
 });
 
-test('rest api: create user schema validation', async () => {
+test('rest api: create user schema validation', { tag: '@api' }, async () => {
     const payload = createRandomUserData;
 
     const response = await postRestApiRequest(env.REST_URL, '/users', payload);

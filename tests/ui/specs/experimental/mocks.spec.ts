@@ -1,7 +1,7 @@
 import { expect, test } from '@fixtures/base';
 import mockedData from '@ui/data/mock.json';
 
-test('should display mocked response', async ({ page }) => {
+test('should display mocked response', { tag: '@mock' }, async ({ page }) => {
 
     await page.route('**/api/books', async (route) => {
         await route.fulfill({ contentType: 'application/json', body: JSON.stringify(mockedData) });

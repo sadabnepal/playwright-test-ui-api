@@ -3,7 +3,7 @@ import { expect, test } from '@fixtures/base';
 import { toastMessage } from '@pages/component';
 import { createEmployeeData } from '@ui/data/employee';
 
-test('validate add employee', async ({ page, loginPage, landingPage, navigatePage, employeePage }) => {
+test('validate add employee', { tag: '@web' }, async ({ page, loginPage, landingPage, navigatePage, employeePage }) => {
 
     await loginPage.open();
     await loginPage.login(localEnv.USERNAME, localEnv.PASSWORD);
