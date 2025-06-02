@@ -1,14 +1,14 @@
-import globals from 'globals';
 import pluginJs from '@eslint/js';
-import tseslint from 'typescript-eslint';
 import stylistic from '@stylistic/eslint-plugin';
 import playwright from 'eslint-plugin-playwright';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
     { files: ["tests/*.{js,,ts}"] },
     {
-        ignores: ["node_modules", "ortoni-report", "eslint.config.mjs"],
+        ignores: ["node_modules", "reports", "eslint.config.mjs"],
     },
     {
         languageOptions: {
