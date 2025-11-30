@@ -1,5 +1,5 @@
 import { expect, test } from '@fixtures/base';
-import mockedData from '@ui/data/mock.json';
+import mockedData from '@ui/data/mock.json' assert { type: 'json' };
 
 test('should display mocked response', { tag: '@mock' }, async ({ page }) => {
 

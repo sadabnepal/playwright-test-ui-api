@@ -6,11 +6,20 @@ export const getUserByIdSchema = z.object({
         email: z.string(),
         first_name: z.string(),
         last_name: z.string(),
-        avatar: z.string().url()
+        avatar: z.url()
     }),
     support: z.object({
-        url: z.string().url(),
+        url: z.url(),
         text: z.string()
+    }),
+    _meta: z.object({
+        powered_by: z.string(),
+        upgrade_url: z.url(),
+        docs_url: z.url(),
+        template_gallery: z.url(),
+        message: z.string(),
+        features: z.array(z.string()),
+        upgrade_cta: z.string()
     })
 }).strict();
 
