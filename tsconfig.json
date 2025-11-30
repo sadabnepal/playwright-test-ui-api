@@ -1,37 +1,38 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "commonjs",
+    "module": "esnext",
     "resolveJsonModule": true,
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "baseUrl": "./tests",
+    "baseUrl": ".",
     "paths": {
       "@ui/data/*": [
-        "./ui/data/*"
+        "tests/ui/data/*"
       ],
       "@fixtures/*": [
-        "./ui/fixtures/*"
+        "tests/ui/fixtures/*"
       ],
       "@ui/interface/*": [
-        "./ui/interfaces/*"
+        "tests/ui/interfaces/*"
       ],
       "@pages/*": [
-        "./ui/pages/*"
+        "tests/ui/pages/*"
       ],
       "@api/data/*": [
-        "./api/data/*"
+        "tests/api/data/*"
       ],
       "@api/helper/*": [
-        "./api/helper/*"
+        "tests/api/helper/*"
       ],
       "@api/schema/*": [
-        "./api/schema/*"
+        "tests/api/schema/*"
       ],
       "@env/*": [
-        "./env/*"
+        "tests/env/*"
       ]
     }
   }

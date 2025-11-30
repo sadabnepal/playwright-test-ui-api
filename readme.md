@@ -22,15 +22,15 @@ npm run prepare
 
 Install Browsers
 ```bash
-npx playwright install --with-deps --chromium
-npx playwright install --with-deps --webkit
+npx playwright install --with-deps chromium
+npx playwright install --with-deps webkit
 ```
 
 Run tests and Generate Report
 
 ```bash
 npm test                 [ run all tests ]
-npm run test:chrome      [ Run UI tests in Chromium ]
+npm run test:chromium    [ Run UI tests in Chromium ]
 npm run test:webkit      [ Run UI tests in Webkit ]
 npm run test:api:rest    [ Run API tests ]
 npm run test:api:graphql [ Run API tests ]
@@ -64,4 +64,4 @@ check script section of package.json for more test commands
 
 
 ## Sample Report:
-![Report](./samples/report.png)
+![Report](./samples/ortoni.png)
