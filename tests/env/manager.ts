@@ -1,5 +1,3 @@
-
-import { RestBaseUrl } from '@api/helper/types';
 import { config } from 'dotenv';
 import { join } from 'path';
 
@@ -15,6 +13,6 @@ config({ path: join(process.cwd(), 'tests', 'env', `${process.env.ENV || 'dev'}.
 
 export const env = {
     APP_URL: process.env.APP_URL as string,
-    REST_URL: process.env.REST_URL as RestBaseUrl,
+    REST_URL: process.env.REST_URL as string,
     GRAPHQL_URL: process.env.GRAPHQL_URL as string
 };

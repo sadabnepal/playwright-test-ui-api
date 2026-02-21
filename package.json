@@ -22,19 +22,19 @@
   "license": "ISC",
   "description": "demo playwright project",
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
-    "@faker-js/faker": "^10.1.0",
-    "@playwright/test": "^1.57.0",
-    "@stylistic/eslint-plugin": "^5.6.1",
-    "@types/node": "^24.10.1",
-    "dotenv": "^17.2.3",
-    "eslint": "^9.39.1",
-    "eslint-plugin-playwright": "^2.4.0",
-    "globals": "^16.5.0",
+    "@eslint/js": "^10.0.1",
+    "@faker-js/faker": "^10.3.0",
+    "@playwright/test": "^1.58.2",
+    "@stylistic/eslint-plugin": "^5.9.0",
+    "@types/node": "^25.3.0",
+    "dotenv": "^17.3.1",
+    "eslint": "^10.0.1",
+    "eslint-plugin-playwright": "^2.7.0",
+    "globals": "^17.3.0",
     "husky": "^9.1.7",
-    "npm-check-updates": "^19.1.2",
-    "ortoni-report": "^4.0.1",
-    "typescript-eslint": "^8.48.0",
-    "zod": "^4.1.13"
+    "npm-check-updates": "^19.4.1",
+    "ortoni-report": "^4.0.7",
+    "typescript-eslint": "^8.56.0",
+    "zod": "^4.3.6"
   }
 }

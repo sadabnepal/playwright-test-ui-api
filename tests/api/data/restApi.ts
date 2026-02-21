@@ -1,7 +1,8 @@
 import { faker } from '@faker-js/faker';
 
 
-export const createRandomUserData = {
-    name: faker.person.fullName(),
-    job: faker.person.jobType()
+export const createRandomPostData = {
+    title: faker.lorem.sentence(),
+    body: faker.lorem.paragraph(),
+    userId: faker.number.int({ min: 1, max: 10 })
 };

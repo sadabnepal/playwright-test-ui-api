@@ -6,16 +6,15 @@ const reportConfig: OrtoniReportConfig = {
     folderPath: './reports/ortoni-report',
     filename: 'index.html',
     title: 'Playwright Test Result',
-    projectName: 'OrangeHrm Test',
+    projectName: 'Playwright Test',
     testType: 'Regression',
     authorName: 'Mohammad Sadab Saqib',
     base64Image: true,
-    showProject: !true,
     stdIO: true,
     meta: {
         project: 'Playwright Test For Web, Rest API and GraphQL API',
-        version: '3.0.0',
-        release: 'Release.2025',
+        version: '26.0.0',
+        release: 'Release.2026',
         platform: process.platform,
     }
 };
@@ -28,7 +27,7 @@ export default defineConfig({
     workers: process.env.CI ? 1 : undefined,
     reporter: [
         ['ortoni-report', reportConfig],
-        ['html', { outputFolder: './reports/playwright-report', open: process.env.CI ? 'never' : 'on-failure' }],
+        ['html', { outputFolder: './reports/playwright-report', open: process.env.CI ? 'never' : 'never' }],
     ],
     use: {
         trace: 'on-first-retry',

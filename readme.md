@@ -64,4 +64,4 @@ check script section of package.json for more test commands
 
 
 ## Sample Report:
-![Report](./samples/ortoni.png)
+![Report](./samples/report.png)
