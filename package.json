@@ -5,7 +5,7 @@
     "test": "npx playwright test",
     "test:ui": "npx playwright test --ui",
     "test:headed": "npx playwright test --headed",
-    "test:chromium": "npx playwright test --project=chromium'",
+    "test:chromium": "npx playwright test --project=chromium",
     "test:webkit": "npx playwright test --project=webkit",
     "test:api:rest": "npx playwright test --project=restApi",
     "test:api:graphql": "npx playwright test --project=graphqlApi",
