@@ -23,7 +23,7 @@ const loginData = {
 async function handleCloudflareChallenge(page: Page): Promise<void> {
     const cloudflareHeading = page.getByRole("heading", { name: "Performing security verification" });
 
-    if (await cloudflareHeading.isVisible({ timeout: 2000 }).catch(() => false)) {
+    if (await cloudflareHeading.isVisible({ timeout: 2000 })) {
         console.log("Cloudflare challenge detected, waiting for resolution...");
         await expect(cloudflareHeading).not.toBeVisible({ timeout: 30_000 });
         await page.waitForLoadState("networkidle");
