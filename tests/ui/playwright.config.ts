@@ -25,9 +25,11 @@ export default defineConfig({
     forbidOnly: !!process.env.CI,
     retries: process.env.CI ? 2 : 0,
     workers: process.env.CI ? 1 : undefined,
-    reporter: [
+    reporter: process.env.CI ? [
+        ["html", { outputFolder: join(process.cwd(), "reports", "ui", "playwright-report"), open: "never" }],
+    ] : [
         ["ortoni-report", reportConfig],
-        ["html", { outputFolder: join(process.cwd(), "reports", "ui", "playwright-report"), open: process.env.CI ? "never" : "on-failure" }],
+        ["html", { outputFolder: join(process.cwd(), "reports", "ui", "playwright-report"), open: "on-failure" }],
     ],
     use: {
         trace: "on-first-retry",
