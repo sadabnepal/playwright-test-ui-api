@@ -54,6 +54,7 @@ check script section of package.json for more test commands
     - Test data generator: faker-js library
     - Multi environment and secretes: dotenv library
     - Code Quality Control: EsLint, Husky, Custom Interface
+    - Demo
 
 ### Tech stacks:
 [![Playwright](https://custom-icon-badges.demolab.com/badge/Playwright-2EAD33?logo=playwright&logoColor=fff)](https://playwright.dev/)
