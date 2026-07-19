@@ -1,4 +1,4 @@
-import { getAllCharacters, queryFilterCharacterByName } from "@api/data/graphql";
+import { getAllCharacters, queryFilterCharacterById } from "@api/data/graphql";
 import { queryGraphQl } from "@api/helper/httpCalls";
 import { graphCharactersSchema } from "@api/schema/reqRes";
 import { env, TEST_ENV } from "@env/manager";
@@ -18,26 +18,20 @@ test("graphql: query all characters", { tag: ["@graphql", testEnvTag] }, async (
 });
 
 
-test("graphql: filter character by name", { tag: ["@graphql", testEnvTag] }, async () => {
-    const response = await queryGraphQl(env.GRAPHQL_URL, queryFilterCharacterByName("Alien Morty"));
+test("graphql: filter character by id", { tag: ["@graphql", testEnvTag] }, async () => {
+    const response = await queryGraphQl(env.GRAPHQL_URL, queryFilterCharacterById(1));
 
     expect(response.status()).toEqual(200);
 
     const body = await response.json();
     console.log("body", JSON.stringify(body, null, 2));
 
-
-    expect(body.data.characters).toMatchObject({
-        info: { count: 1 },
-        results: [
-            {
-                id: "14",
-                name: "Alien Morty",
-                status: "unknown",
-                gender: "Male",
-                species: "Alien"
-            }
-        ]
+    expect(body.data.character).toMatchObject({
+        id: "1",
+        name: "Rick Sanchez",
+        status: "Alive",
+        gender: "Male",
+        species: "Human"
     });
 
 });

@@ -1,19 +1,14 @@
-export const queryFilterCharacterByName = (name: string) => ({
-    query: `query Query($name: String) {
-        characters(filter: {name: $name}) {
-            info {
-                count
-            }
-            results {
-                id
-                name
-                status
-                gender
-                species
-            }
+export const queryFilterCharacterById = (id: number) => ({
+    query: `query Character($id: ID!) {
+        character(id: $id) {
+            id
+            name
+            status
+            species
+            gender
         }
     }`,
-    variables: { name }
+    variables: { id }
 });
 
 export const getAllCharacters = () => ({
